@@ -44,9 +44,11 @@ async def on_mp(client: discord.Client, message: discord.Message):
 
     else:
         if message.content:
-            await client.get_channel(link.channel_id).send(f"{message.content}")
+            await client.get_channel(link.channel_id).send(message.content)
 
         for attachment in message.attachments:
-            await client.get_channel(link.channel_id).send(f"{attachment.proxy_url}")
+            embed = discord.Embed()
+            embed.set_image(url=attachment.proxy_url)
+            await client.get_channel(link.channel_id).send(embed=embed)
 
         await message.add_reaction('📨')
