@@ -52,8 +52,6 @@ async def on_guild(client: discord.Client, message: discord.Message):
             await client.get_user(link.author_id).send(f"{message.content}")
 
         for attachment in message.attachments:
-            embed = discord.Embed()
-            embed.set_image(url=attachment.proxy_url)
-            await client.get_user(link.author_id).send(embed=embed)
+            await client.get_user(link.author_id).send(attachment.proxy_url)
 
         await message.add_reaction('📨')
