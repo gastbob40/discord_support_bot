@@ -6,7 +6,7 @@ from src.eventsHandler.eventsHandler import EventsHandler
 with open('run/config/config.yml', 'r') as file:
     config = yaml.safe_load(file)
 
-client = discord.Client()
+client = discord.Client(activity=discord.Game("m'envoyer un message d'aide"))
 
 
 @client.event
