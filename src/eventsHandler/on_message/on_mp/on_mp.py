@@ -31,11 +31,10 @@ async def on_mp(client: discord.Client, message: discord.Message):
         session.add(link)
         session.commit()
 
-        await message.channel.send("✅ | Une discussion vient de commencer.\n"
-                                   "Tous mes messages que vous posterez ici (y compris votre précédent message), "
-                                   "sera retransmis au staff.\n\n"
-                                   "**Merci pour votre message! "
-                                   "Notre équipe de modérateurs vous répondra dans les plus brefs délais.**")
+        await message.channel.send("Merci pour votre message! "
+                                   "Notre équipe de modérateurs vous répondra dans les plus brefs délais.\n"
+                                   "Tous les messages que vous posterez ici (y compris votre précédent message), "
+                                   "sera retransmis au staff.")
 
         await client.get_channel(link.channel_id).send(f"**Une discussion vient de commencer avec "
                                                        f"{author.name}#{author.discriminator} | {author.id}.**")
