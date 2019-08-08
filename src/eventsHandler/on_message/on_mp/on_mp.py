@@ -22,7 +22,7 @@ async def on_mp(client: discord.Client, message: discord.Message):
                 f"Conversation commencé le : {now.day}/{now.month}/{now.year} à {now.hour}:{now.minute}"
 
         channel = await client.get_guild(config['guild_id']).create_text_channel(
-            textwrap.shorten(author.name, width=10),
+            author.name[:10],
             category=client.get_guild(config['guild_id']).get_channel(config['category_id']),
             topic=topic
         )
@@ -33,7 +33,9 @@ async def on_mp(client: discord.Client, message: discord.Message):
 
         await message.channel.send("✅ | Une discussion vient de commencer.\n"
                                    "Tous mes messages que vous posterez ici (y compris votre précédent message), "
-                                   "sera retransmis au staff.")
+                                   "sera retransmis au staff.\n\n"
+                                   "**Merci pour votre message! "
+                                   "Notre équipe de modérateurs vous répondra dans les plus brefs délais.**")
 
         await client.get_channel(link.channel_id).send(f"**Une discussion vient de commencer avec "
                                                        f"{author.name}#{author.discriminator} | {author.id}.**")
