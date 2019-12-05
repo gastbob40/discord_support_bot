@@ -1,6 +1,7 @@
 # Discord Support Bot
 
-![GitHub release](https://img.shields.io/badge/release-1.0.0-success)
+![Discord](https://img.shields.io/badge/Discord-project-brightgreen)
+![python](https://img.shields.io/badge/Language-Python-blueviolet)
 
 This github contains the code to quickly set up a support bot. When a person sends an mp to this bot, this message is forwarded to a discord server, and this by creating a lounge in a category. It will then be possible to answer the person by writing in this room. This bot also retransmits all the files transmitted on both sides.
 
